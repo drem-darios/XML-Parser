@@ -1,0 +1,12 @@
+<STUDENTS>
+        <STUDENT>
+                <NAME>HillyBilly</NAME>
+                <AGE>19</AGE>
+                <CLASS>10</CLASS>
+</STUDENT>
+        <STUDENT>
+                <NAME>Captain Kirk</NAME>
+                <AGE>20</AGE>
+                <CLASS>10</CLASS>
+        </STUDENT>
+</STUDENTS>
