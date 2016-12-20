@@ -1,4 +1,4 @@
-package com.seatavdisor.parser.xml;
+package com.seatavdisor.parser.xml.api;
 
 
 public enum XMLReadState {

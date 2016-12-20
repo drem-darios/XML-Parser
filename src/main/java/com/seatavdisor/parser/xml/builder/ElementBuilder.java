@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Stack;
 import java.util.Vector;
 
-import com.seatavdisor.parser.xml.XMLReadState;
+import com.seatavdisor.parser.xml.api.XMLReadState;
 import com.seatavdisor.parser.xml.model.Element;
 
 public class ElementBuilder {
