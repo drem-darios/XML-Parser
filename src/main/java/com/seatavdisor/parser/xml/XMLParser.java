@@ -21,72 +21,79 @@ public class XMLParser {
 		return result;
 	}
 	
-	public static Element getElement(String xmlString) throws IOException, ParseException {
+	public static Element getElement(String xmlString) {
 		StringReader reader = new StringReader(xmlString);
 		int charRead = 0;
 		boolean eol = false;
 		ElementBuilder result = new ElementBuilder();
-		while((charRead = reader.read()) != -1) {
+		try {
 			
-			if (charRead == '\n' && eol) {
-				eol = false;
-				continue;
-			} else if (eol) {
-				eol = false;
-			} else if (charRead == '\r') {
-				charRead = '\n';
-				eol = true;
+		
+			while((charRead = reader.read()) != -1) {
+				
+				if (charRead == '\n' && eol) {
+					eol = false;
+					continue;
+				} else if (eol) {
+					eol = false;
+				} else if (charRead == '\r') {
+					charRead = '\n';
+					eol = true;
+				}
+				
+				switch(result.getCurrentReadState()) {
+				case ATTRIBUTE_EQUALS:
+					result = result.buildAttributeEquals(charRead);
+					break;
+				case ATTRIBUTE_KEY:
+					result = result.buildAttributeKey(charRead);
+					break;
+				case ATTRIBUTE_VALUE:
+					result = result.buildAttributeValue(charRead);
+					break;
+				case CDATA:
+					result = result.buildCData(charRead);
+					break;
+				case CLOSE_TAG:
+					result = result.buildCloseTag(charRead);
+					break;
+				case COMMENT:
+					result = result.buildCommentTag(charRead);
+					break;
+				case DOCTYPE:
+					result = result.buildDocType(charRead);
+					break;
+				case ENTITY:
+					result = result.buildEntity(charRead);
+					break;
+				case INSIDE_TAG:
+					result = result.buildInsideTag(charRead);
+					break;
+				case NEW_ELEMENT:
+					result = result.buildNewElement(charRead);
+					break;
+				case OPEN_TAG:
+					result = result.buildOpenTag(charRead);
+					break;
+				case QUOTE:
+					result = result.buildQuote(charRead);
+					break;
+				case SINGLE_TAG:
+					result = result.buildSingleTag(charRead);
+					break;
+				case START_TAG:
+					result = result.buildStartTag(charRead);
+					break;
+				case TEXT:
+					result = result.buildText(charRead);
+					break;
+				}
 			}
-			
-			switch(result.getCurrentReadState()) {
-			case ATTRIBUTE_EQUALS:
-				result = result.buildAttributeEquals(charRead);
-				break;
-			case ATTRIBUTE_KEY:
-				result = result.buildAttributeKey(charRead);
-				break;
-			case ATTRIBUTE_VALUE:
-				result = result.buildAttributeValue(charRead);
-				break;
-			case CDATA:
-				result = result.buildCData(charRead);
-				break;
-			case CLOSE_TAG:
-				result = result.buildCloseTag(charRead);
-				break;
-			case COMMENT:
-				result = result.buildCommentTag(charRead);
-				break;
-			case DOCTYPE:
-				result = result.buildDocType(charRead);
-				break;
-			case ENTITY:
-				result = result.buildEntity(charRead);
-				break;
-			case INSIDE_TAG:
-				result = result.buildInsideTag(charRead);
-				break;
-			case NEW_ELEMENT:
-				result = result.buildNewElement(charRead);
-				break;
-			case OPEN_TAG:
-				result = result.buildOpenTag(charRead);
-				break;
-			case QUOTE:
-				result = result.buildQuote(charRead);
-				break;
-			case SINGLE_TAG:
-				result = result.buildSingleTag(charRead);
-				break;
-			case START_TAG:
-				result = result.buildStartTag(charRead);
-				break;
-			case TEXT:
-				result = result.buildText(charRead);
-				break;
-			}
+			return result.buildElement();
+		
+		} catch (IOException | ParseException e) {
+			return null;
 		}
-		return result.buildElement();
 			
 	}
 	
