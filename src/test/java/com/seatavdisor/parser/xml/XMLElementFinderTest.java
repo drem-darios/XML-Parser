@@ -9,12 +9,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.seatavdisor.parser.xml.XMLParser;
+import com.seatavdisor.parser.xml.finder.XMLElementFinder;
 import com.seatavdisor.parser.xml.model.Element;
-import com.seatavdisor.parser.xml.query.XMLElementFinder;
 
 public class XMLElementFinderTest {
 
-	private static final String TEST_FILE = "bookstore.xml";
+	private static final String TEST_FILE = "students.xml";
 	private String xml;
 	
 	@Before
@@ -28,24 +28,11 @@ public class XMLElementFinderTest {
 
 	@Test
 	public void testGetXMLTagValues() {
-		String expectedTagName = "";
-		
-//		Vector<Element> elements = XMLElementFinder.getXMLTagValues(xmlString, tagName);
-//		for (Element element: elements) {
-//			
-//		}
+		Vector<String> v = XMLElementFinder.getXMLTagValues(this.xml, "STUDENT");
+		Assert.assertEquals(2, v.size());
+		Vector<String> ageV = XMLElementFinder.getXMLTagValues(v.elementAt(0), "AGE");
+		Assert.assertEquals("19", ageV.elementAt(0));
+		System.out.println("Age is  : " + ageV.elementAt(0));
 	}
 	
-	@Test
-	public void testXMLParser() {
-		String xmlFile = XMLParser.getXMLString(TEST_FILE);
-		try {
-			Element element = XMLParser.getElement(xmlFile);
-			// TODO: Add more test content here!
-			System.out.println(element);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 }

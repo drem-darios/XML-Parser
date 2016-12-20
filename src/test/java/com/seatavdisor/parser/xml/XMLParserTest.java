@@ -1,19 +1,16 @@
 package com.seatavdisor.parser.xml;
 
-import java.util.Vector;
-
 import org.apache.commons.io.IOUtils;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.seatavdisor.parser.xml.XMLParser;
 import com.seatavdisor.parser.xml.model.Element;
 
 public class XMLParserTest {
 
-	private static final String TEST_FILE = "bookstore.xml";
+	private static final String TEST_FILE = "students.xml";
 	private String xml;
 	
 	@Before
