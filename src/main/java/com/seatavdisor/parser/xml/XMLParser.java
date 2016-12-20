@@ -1,23 +1,15 @@
-package com.seatavdisor.parser.xml.impl;
+package com.seatavdisor.parser.xml;
 
 import java.io.IOException;
 import java.io.StringReader;
 import java.text.ParseException;
-import java.util.Stack;
-import java.util.Vector;
 
 import org.apache.commons.io.IOUtils;
 
+import com.seatavdisor.parser.xml.builder.ElementBuilder;
 import com.seatavdisor.parser.xml.model.Element;
-import com.seatavdisor.parser.xml.model.Element.ElementBuilder;
 
 public class XMLParser {
-	
-	public static Vector getXMLTagValue(String xmlString, String tagName) {
-//		Element rootElement = parse(xmlString);
-		return null;
-	}
-	
 	
 	public static String getXMLString(String fileLocation) {
 		String result = null;
@@ -33,7 +25,7 @@ public class XMLParser {
 		StringReader reader = new StringReader(xmlString);
 		int charRead = 0;
 		boolean eol = false;
-		ElementBuilder result = new Element.ElementBuilder();
+		ElementBuilder result = new ElementBuilder();
 		while((charRead = reader.read()) != -1) {
 			
 			if (charRead == '\n' && eol) {

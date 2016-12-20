@@ -10,8 +10,9 @@ import org.junit.Test;
 
 import com.seatavdisor.parser.xml.XMLParser;
 import com.seatavdisor.parser.xml.model.Element;
+import com.seatavdisor.parser.xml.query.XMLElementFinder;
 
-public class XMLParserTest {
+public class XMLElementFinderTest {
 
 	private static final String TEST_FILE = "bookstore.xml";
 	private String xml;
@@ -26,10 +27,13 @@ public class XMLParserTest {
 	}
 
 	@Test
-	public void testReadXMLFile() {
-		System.out.println(xml);
-		String actual = XMLParser.getXMLString(TEST_FILE);
-		Assert.assertEquals(xml, actual);
+	public void testGetXMLTagValues() {
+		String expectedTagName = "";
+		
+//		Vector<Element> elements = XMLElementFinder.getXMLTagValues(xmlString, tagName);
+//		for (Element element: elements) {
+//			
+//		}
 	}
 	
 	@Test
