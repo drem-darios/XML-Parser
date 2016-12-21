@@ -1,12 +1,23 @@
 package com.seatavdisor.parser.xml.finder;
 
 import java.util.Vector;
+import java.util.logging.Logger;
 
 import com.seatavdisor.parser.xml.XMLParser;
 import com.seatavdisor.parser.xml.model.Element;
 
+/**
+ * The XMLElementFinder can be used to search an XML document for elements with specific tag names. 
+ * @author drem
+ *
+ */
 public class XMLElementFinder {
 
+	private static Logger logger = Logger.getLogger(XMLElementFinder.class.getName());
+	
+	/**
+	 * Returns a <code>Vector</code> of <code>Element</code> Objects with the given tag name.
+	 */
 	public static Vector<Element> getXMLTagValues(Element xmlElement, String tagName) {
 		Vector<Element> result = new Vector<Element>();
 		for (Element element: xmlElement.getElements()) {
@@ -17,6 +28,10 @@ public class XMLElementFinder {
 		return result;
 	}
 	
+	/**
+	 * Returns a <code>Vector</code> of the XML String representation of <code>Element</code> Objects
+	 * with the given tag name.
+	 */
 	public static Vector<String> getXMLTagValues(String xmlString, String tagName) {
 		Element xmlElement = XMLParser.getElement(xmlString);
 		Vector<String> result = new Vector<String>();

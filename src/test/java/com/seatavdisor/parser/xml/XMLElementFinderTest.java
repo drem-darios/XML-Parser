@@ -8,9 +8,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.seatavdisor.parser.xml.XMLParser;
 import com.seatavdisor.parser.xml.finder.XMLElementFinder;
-import com.seatavdisor.parser.xml.model.Element;
 
 public class XMLElementFinderTest {
 

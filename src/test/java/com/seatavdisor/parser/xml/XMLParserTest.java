@@ -11,11 +11,11 @@ import com.seatavdisor.parser.xml.model.Element;
 public class XMLParserTest {
 
 	private static final String TEST_FILE = "students.xml";
-	private String xml;
+	private String xmlFile;
 	
 	@Before
 	public void setUp() throws Exception {
-		this.xml = IOUtils.toString(this.getClass().getClassLoader().getResourceAsStream(TEST_FILE),"UTF-8");
+		this.xmlFile = IOUtils.toString(this.getClass().getClassLoader().getResourceAsStream(TEST_FILE),"UTF-8");
 	}
 
 	@After
@@ -24,20 +24,16 @@ public class XMLParserTest {
 
 	@Test
 	public void testReadXMLFile() {
-		System.out.println(xml);
 		String actual = XMLParser.getXMLString(TEST_FILE);
-		Assert.assertEquals(xml, actual);
+		Assert.assertEquals(xmlFile, actual);
 	}
 	
 	@Test
 	public void testXMLParser() {
-		String xmlFile = XMLParser.getXMLString(TEST_FILE);
-		try {
-			Element element = XMLParser.getElement(xmlFile);
-			// TODO: Add more test content here!
-			System.out.println(element);
-		} catch (Exception e) {
-			e.printStackTrace();
+		Element element = XMLParser.getElement(xmlFile);
+		Assert.assertEquals(2, element.getElements().size()); // Two students
+		for (Element el: element.getElements()) {
+			Assert.assertEquals(3, el.getElements().size()); // name, age, class
 		}
 	}
 
