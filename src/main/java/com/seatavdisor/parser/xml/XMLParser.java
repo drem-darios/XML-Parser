@@ -105,7 +105,10 @@ public class XMLParser {
 			}
 			return result.buildElement();
 		
-		} catch (IOException | ParseException e) {
+		} catch (IOException e) {
+			logger.severe(e.getMessage());
+			return null;
+		} catch(ParseException e) {
 			logger.severe(e.getMessage());
 			return null;
 		}

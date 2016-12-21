@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.seatavdisor</groupId>
-	<artifactId>parser.xml</artifactId>
+	<artifactId>xml_parser</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>parser.xml</name>
+	<name>xml_parser</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
