@@ -1,4 +1,4 @@
-package com.seatavdisor.parser.xml.model;
+package com.ticketsrus.parser.xml.model;
 
 import java.util.Collection;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.seatavdisor.parser.xml.builder.ElementBuilder;
+import com.ticketsrus.parser.xml.builder.ElementBuilder;
 
 /**
  * An Object that makes up an XML element (i.e <tag>FOOBAR</tag>). Elements can

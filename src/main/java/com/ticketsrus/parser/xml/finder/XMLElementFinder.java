@@ -1,10 +1,10 @@
-package com.seatavdisor.parser.xml.finder;
+package com.ticketsrus.parser.xml.finder;
 
 import java.util.Vector;
 import java.util.logging.Logger;
 
-import com.seatavdisor.parser.xml.XMLParser;
-import com.seatavdisor.parser.xml.model.Element;
+import com.ticketsrus.parser.xml.XMLParser;
+import com.ticketsrus.parser.xml.model.Element;
 
 /**
  * The XMLElementFinder can be used to search an XML document for elements with specific tag names. 

@@ -1,4 +1,4 @@
-package com.seatavdisor.parser.xml.api;
+package com.ticketsrus.parser.xml.api;
 
 /**
  * Enumeration of the possible states during reading XML

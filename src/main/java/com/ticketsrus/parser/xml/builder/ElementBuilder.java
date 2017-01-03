@@ -1,4 +1,4 @@
-package com.seatavdisor.parser.xml.builder;
+package com.ticketsrus.parser.xml.builder;
 
 import java.text.ParseException;
 import java.util.Collection;
@@ -8,8 +8,8 @@ import java.util.Stack;
 import java.util.Vector;
 import java.util.logging.Logger;
 
-import com.seatavdisor.parser.xml.api.XMLReadState;
-import com.seatavdisor.parser.xml.model.Element;
+import com.ticketsrus.parser.xml.api.XMLReadState;
+import com.ticketsrus.parser.xml.model.Element;
 
 /**
  * Uses builder pattern to create an <code>Element</code>

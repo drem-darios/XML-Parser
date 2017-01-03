@@ -1,4 +1,4 @@
-package com.seatavdisor.parser.xml;
+package com.ticketsrus.parser.xml;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -7,8 +7,8 @@ import java.util.logging.Logger;
 
 import org.apache.commons.io.IOUtils;
 
-import com.seatavdisor.parser.xml.builder.ElementBuilder;
-import com.seatavdisor.parser.xml.model.Element;
+import com.ticketsrus.parser.xml.builder.ElementBuilder;
+import com.ticketsrus.parser.xml.model.Element;
 
 /**
  * This class can be used to parse XML into an <code>Element</code> object or simply load an XML file as

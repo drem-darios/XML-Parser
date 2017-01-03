@@ -1,4 +1,4 @@
-package com.seatavdisor.parser.xml;
+package com.ticketsrus.parser.xml;
 
 import java.util.Vector;
 
@@ -8,7 +8,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.seatavdisor.parser.xml.finder.XMLElementFinder;
+import com.ticketsrus.parser.xml.finder.XMLElementFinder;
 
 public class XMLElementFinderTest {
 

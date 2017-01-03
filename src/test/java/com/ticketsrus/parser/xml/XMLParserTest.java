@@ -1,4 +1,4 @@
-package com.seatavdisor.parser.xml;
+package com.ticketsrus.parser.xml;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.After;
@@ -6,7 +6,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.seatavdisor.parser.xml.model.Element;
+import com.ticketsrus.parser.xml.XMLParser;
+import com.ticketsrus.parser.xml.model.Element;
 
 public class XMLParserTest {
 
